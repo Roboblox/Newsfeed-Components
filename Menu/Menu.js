@@ -1,12 +1,12 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out",
 ];
 
 /* 
@@ -31,3 +31,47 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned markup to the DOM.
 */
+// function menuMaker(data) {
+//   const menuButton = document.querySelector(".menu-button");
+//   const menu = document.createElement("div");
+//   menu.classList.add("menu");
+
+//   var li = document.createElement("li");
+//   var text = document.createTextNode(item);
+//   li.appendChild(text);
+//   menu.appendChild(li);
+
+//   menuButton.addEventListener("click", (event) => {
+//     menuButton.classList.toggle("toggle");
+//   });
+//   return menu;
+// }
+
+// for (let i = 0; i < menuItems.length; i++) {
+//   var text = document.createTextNode(i);
+//   const menuItem = menuMaker(menuItems[i]);
+//   menu.appendChild(menuItem);
+// }
+// console.log(menuMaker(menuItems));
+function menuMaker(data) {
+  const menuButton = document.querySelector(".menu-button");
+  const menu = document.createElement("div");
+  menu.classList.add("menu");
+  document.body.appendChild(menu);
+
+  const ul = document.createElement("ul");
+  menu.appendChild(ul);
+
+  for (let i = 0; i < data.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = data[i];
+    ul.appendChild(li);
+  }
+
+  menuButton.addEventListener("click", (event) => {
+    menu.classList.toggle("menu--open");
+  });
+
+  return menu;
+}
+menuMaker(menuItems);
