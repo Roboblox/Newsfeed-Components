@@ -1,12 +1,12 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out",
 ];
 
 /* 
@@ -31,3 +31,15 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned markup to the DOM.
 */
+function menuMaker(array) {
+  const menu = document.createElement("div");
+  menu.classList.add("menu");
+  array.forEach(function (item) {
+    var li = document.createElement("li");
+    var text = document.createTextNode(item);
+    li.appendChild(text);
+    menu.appendChild(li);
+  });
+  return menu;
+}
+console.log(menuMaker(menuItems));
