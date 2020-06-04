@@ -131,76 +131,43 @@ function articleMaker(object) {
 
   article.classList.add("article");
   article.classList.add("date");
-  expandButton.classList.add("button");
+  expandButton.classList.add("expandButton");
 
   title.textContent = object.title;
   date.textContent = object.date;
   content1.textContent = object.firstParagraph;
   content2.textContent = object.secondParagraph;
   content3.textContent = object.thirdParagraph;
-  expandButton.textContent = "button";
+  expandButton.textContent = " I am A button";
 
-  article.addEventListener("click", (event) => {
+  expandButton.addEventListener("click", (event) => {
     article.classList.toggle("article-open");
+    // expandButton.classList.toggle("article-open");
   });
   return article;
 }
 
-const newArticles = [
-  {
-    title: "A new article",
-    date: "June 7th, 2000",
-    firstParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
+const newArticle = {
+  title: "A new article",
+  date: "June 7th, 2000",
+  firstParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
     Facere, corrupti ex perferendis deleniti facilis mollitia debitis, praesentium nesciunt iusto cumque quasi cum sapiente. Recusandae earum animi magnam id error, natus consequatur quo dicta accusantium libero labore ipsum minus?
     Omnis nemo vero recusandae dolore nihil, deserunt debitis libero impedit accusamus necessitatibus neque, qui reiciendis praesentium nulla excepturi aut, corporis voluptatem consequuntur voluptate. In quae voluptatibus quas suscipit exercitationem impedit?`,
 
-    secondParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
+  secondParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
     Facere, corrupti ex perferendis deleniti facilis mollitia debitis, praesentium nesciunt iusto cumque quasi cum sapiente. Recusandae earum animi magnam id error, natus consequatur quo dicta accusantium libero labore ipsum minus?
     Omnis nemo vero recusandae dolore nihil, deserunt debitis libero impedit accusamus necessitatibus neque, qui reiciendis praesentium nulla excepturi aut, corporis voluptatem consequuntur voluptate. In quae voluptatibus quas suscipit exercitationem impedit?`,
 
-    thirdParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
+  thirdParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
     Facere, corrupti ex perferendis deleniti facilis mollitia debitis, praesentium nesciunt iusto cumque quasi cum sapiente. Recusandae earum animi magnam id error, natus consequatur quo dicta accusantium libero labore ipsum minus?
     Omnis nemo vero recusandae dolore nihil, deserunt debitis libero impedit accusamus necessitatibus neque, qui reiciendis praesentium nulla excepturi aut, corporis voluptatem consequuntur voluptate. In quae voluptatibus quas suscipit exercitationem impedit?`,
-  },
-  {
-    title: "A new article",
-    date: "June 7th, 2000",
-    firstParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
-    Facere, corrupti ex perferendis deleniti facilis mollitia debitis, praesentium nesciunt iusto cumque quasi cum sapiente. Recusandae earum animi magnam id error, natus consequatur quo dicta accusantium libero labore ipsum minus?
-    Omnis nemo vero recusandae dolore nihil, deserunt debitis libero impedit accusamus necessitatibus neque, qui reiciendis praesentium nulla excepturi aut, corporis voluptatem consequuntur voluptate. In quae voluptatibus quas suscipit exercitationem impedit?`,
+};
 
-    secondParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
-    Facere, corrupti ex perferendis deleniti facilis mollitia debitis, praesentium nesciunt iusto cumque quasi cum sapiente. Recusandae earum animi magnam id error, natus consequatur quo dicta accusantium libero labore ipsum minus?
-    Omnis nemo vero recusandae dolore nihil, deserunt debitis libero impedit accusamus necessitatibus neque, qui reiciendis praesentium nulla excepturi aut, corporis voluptatem consequuntur voluptate. In quae voluptatibus quas suscipit exercitationem impedit?`,
-
-    thirdParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
-    Facere, corrupti ex perferendis deleniti facilis mollitia debitis, praesentium nesciunt iusto cumque quasi cum sapiente. Recusandae earum animi magnam id error, natus consequatur quo dicta accusantium libero labore ipsum minus?
-    Omnis nemo vero recusandae dolore nihil, deserunt debitis libero impedit accusamus necessitatibus neque, qui reiciendis praesentium nulla excepturi aut, corporis voluptatem consequuntur voluptate. In quae voluptatibus quas suscipit exercitationem impedit?`,
-  },
-  {
-    title: "A new article",
-    date: "June 7th, 2000",
-    firstParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
-    Facere, corrupti ex perferendis deleniti facilis mollitia debitis, praesentium nesciunt iusto cumque quasi cum sapiente. Recusandae earum animi magnam id error, natus consequatur quo dicta accusantium libero labore ipsum minus?
-    Omnis nemo vero recusandae dolore nihil, deserunt debitis libero impedit accusamus necessitatibus neque, qui reiciendis praesentium nulla excepturi aut, corporis voluptatem consequuntur voluptate. In quae voluptatibus quas suscipit exercitationem impedit?`,
-
-    secondParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
-    Facere, corrupti ex perferendis deleniti facilis mollitia debitis, praesentium nesciunt iusto cumque quasi cum sapiente. Recusandae earum animi magnam id error, natus consequatur quo dicta accusantium libero labore ipsum minus?
-    Omnis nemo vero recusandae dolore nihil, deserunt debitis libero impedit accusamus necessitatibus neque, qui reiciendis praesentium nulla excepturi aut, corporis voluptatem consequuntur voluptate. In quae voluptatibus quas suscipit exercitationem impedit?`,
-
-    thirdParagraph: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere amet excepturi, molestiae incidunt animi laborum, hic magni dignissimos labore vitae, velit reiciendis quis cupiditate similique nam repellendus adipisci? Quia, eius.
-    Facere, corrupti ex perferendis deleniti facilis mollitia debitis, praesentium nesciunt iusto cumque quasi cum sapiente. Recusandae earum animi magnam id error, natus consequatur quo dicta accusantium libero labore ipsum minus?
-    Omnis nemo vero recusandae dolore nihil, deserunt debitis libero impedit accusamus necessitatibus neque, qui reiciendis praesentium nulla excepturi aut, corporis voluptatem consequuntur voluptate. In quae voluptatibus quas suscipit exercitationem impedit?`,
-  },
-];
-
-for (let i = 0; i < newArticles.length; i++) {
-  const newArticle = newArticles[i];
-  data.push(newArticle);
-}
-console.log(data);
+data.push(newArticle);
 
 for (let i = 0; i < data.length; i++) {
   const article = articleMaker(data[i]);
   articles.appendChild(article);
 }
+
+console.log(data);
